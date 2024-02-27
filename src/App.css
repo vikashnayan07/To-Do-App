@@ -1,0 +1,22 @@
+h1{
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+input{
+  width: 100%;
+}
+.item-container{
+  text-align: left;
+}
+.vn-row{
+  margin: 10px 5px;
+}
+.vn-button{
+  min-width: 80px;
+  align-items: center;
+}
+.vn-btn{
+  margin-left: 42px;
+}
