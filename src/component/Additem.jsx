@@ -1,40 +1,31 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 
 function Additem({ onNewItem }) {
-  const [todoName, setodoName] = useState("");
-  const [todoDate, setodoDate] = useState("");
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
-  const handletodoName = (event) => {
-    setodoName(event.target.value);
-  };
-  const handletodoDate = (event) => {
-    setodoDate(event.target.value);
-  };
   const handleButtonClicked = () => {
+    const todoName = todoNameElement.current.value;
+    const todoDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
     onNewItem(todoName, todoDate);
-    setodoDate("");
-    setodoName("");
   };
   return (
     <div class="container text-center">
       <div class="row vn-row">
         <div class="col-6">
-          <input
-            type="text"
-            placeholder="Add To-Do"
-            value={todoName}
-            onChange={handletodoName}
-          />
+          <input type="text" placeholder="Add To-Do" ref={todoNameElement} />
         </div>
         <div class="col-4">
-          <input type="date" value={todoDate} onChange={handletodoDate} />
+          <input type="date" ref={dueDateElement} />
         </div>
         <div class="col-2">
           <button
             type="button"
             class="btn btn-success vn-button"
-            disabled={!todoName}
+            disabled={!todoNameElement}
             onClick={handleButtonClicked}
           >
             <MdAddCircleOutline />
