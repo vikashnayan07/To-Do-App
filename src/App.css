@@ -1,9 +1,4 @@
-h1{
-  font-weight: 700;
-  font-size: 20px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
+
 input{
   width: 100%;
 }
@@ -12,6 +7,7 @@ input{
 }
 .vn-row{
   margin: 10px 5px;
+  
 }
 .vn-button{
   min-width: 80px;
